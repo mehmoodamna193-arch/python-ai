@@ -7,4 +7,9 @@ wheels/
 *.egg-info
 
 # Virtual environments
-.venv
+.venv/
+# Private customer data: never push these to GitHub
+chat_history.json
+errors.log
+transcript.txt
+
