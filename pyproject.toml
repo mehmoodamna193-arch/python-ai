@@ -10,6 +10,8 @@ requires-python = ">=3.13"
 dependencies = [
     "ipykernel>=7.4.0",
     "langchain>=1.4.7",
+    "langchain-mistralai>=1.1.6",
     "langchain-ollama>=1.1.0",
+    "langgraph>=1.2.17",
 ]
 
