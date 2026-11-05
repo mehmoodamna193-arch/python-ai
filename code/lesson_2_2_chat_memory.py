@@ -50,7 +50,7 @@ while True:
 
         # Why [messages[0]] + ...: trimming must never cut off the system
         # message, or the tutor loses its role and answer length.
-        messages = [messages[0]] + messages[1:][-8]
+        messages = [messages[0]] + messages[1:][-8:]
 
         response = llm.invoke(messages)
         answer = response.text
