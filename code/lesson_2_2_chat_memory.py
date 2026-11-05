@@ -12,7 +12,7 @@ from langchain.chat_models import init_chat_model
 
 # Why a limit: every call re-sends the whole history, so without a cap the
 # chat gets slower and more expensive with each turn.
-MAX_MESSAGES = 8
+
 
 # Why create the model once, before the loop: every turn reuses it, and the
 # slow model loading happens only on the first call.
@@ -50,7 +50,7 @@ while True:
 
         # Why [messages[0]] + ...: trimming must never cut off the system
         # message, or the tutor loses its role and answer length.
-        messages = [messages[0]] + messages[1:][-MAX_MESSAGES:]
+        messages = [messages[0]] + messages[1:][-8]
 
         response = llm.invoke(messages)
         answer = response.text
